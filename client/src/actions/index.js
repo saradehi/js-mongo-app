@@ -10,7 +10,7 @@ export const getAllDogs = () => {
 
     return async function(dispatch){
         try {
-            const response = await axios.get('http://localhost:3001/cards');
+            const response = await axios.get('cards');
             return dispatch({ type: GET_ALL_DOGS, payload: response.data });
         } catch (err) {
             return err.response;
