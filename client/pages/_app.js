@@ -4,7 +4,7 @@ import { wrapper } from "../src/store";
 import { Provider } from "react-redux";
 import { SessionProvider } from "next-auth/react";
 import axios from "axios";
-axios.defaults.baseURL = "js-mongo-app-production.up.railway.app";
+axios.defaults.baseURL = "https://js-mongo-app-production.up.railway.app/";
 
 const MyApp = ({ Component, session, ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest);
