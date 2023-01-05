@@ -15,7 +15,7 @@ export default function () {
               <Link href={"/profile"}>
                 <button type="button">{session.user.name}'s</button>
               </Link>{" "}
-              profile.
+              profile. 
             </p>
           </div>
         ) : (
