@@ -1,5 +1,5 @@
 import React from "react";
-import { useSession, signOut, getSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 
 const profile = () => {
@@ -16,6 +16,7 @@ const profile = () => {
                 </div> : 
                 <div>
                     <p>You are not sign in</p>
+                    <button onClick={()=> signIn()}>Sign in</button>
                 </div>
             }
         </div>
@@ -24,11 +25,3 @@ const profile = () => {
 
 export default profile
 
-export const getServerSideProps = async (context) => {
-    const session = await getSession(context);
-   
-
-    return {
-        props: { session }
-    };
-};
