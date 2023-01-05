@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['olondriz.com', 'cdn2.thedogapi.com', 'lh3.googleusercontent.com'],
+    domains: ['olondriz.com', 'cdn2.thedogapi.com', 'lh3.googleusercontent.com', 'platform-lookaside.fbsbx.com'],
   }
 }
 
