@@ -11,11 +11,12 @@ export default function Home() {
       <Head><title>Home Page</title></Head>
 
       {
-        session ? <User session={session} /> : <Guest />
+        session ? <User session={{data:session}} /> : <Guest />
       }
 
     </div>
   );
 }
+
 
 
