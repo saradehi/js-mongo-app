@@ -11,7 +11,7 @@ export default function Home() {
       <Head><title>Home Page</title></Head>
 
       {
-        session ? <User session={{data:session}} /> : <Guest />
+        session ? <User name={session.user.name} /> : <Guest />
       }
 
     </div>
