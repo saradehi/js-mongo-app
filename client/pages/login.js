@@ -8,6 +8,7 @@ import imageGoogle from '../public/img/google.png'
 import imageFacebook from '../public/img/facebook.png'
 import {HiAtSymbol, HiFingerPrint} from 'react-icons/hi'
 import { signIn } from "next-auth/react";
+import {useFormik} from 'formik'
 
 export default function () {
   // const {data: session} = useSession()
@@ -55,7 +56,18 @@ export default function () {
   //     )}
   //   </>
   // );
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: ""
+    },
+    onSubmit
+  })
+
+  async function onSubmit (values) {
+    console.log(values)
+  }
 
   async function handleGoogleSignIn () {
     signIn("google", { callbackUrl: "https://js-mongo-app-126f.vercel.app/" });
@@ -73,7 +85,11 @@ export default function () {
       <Head>
         <title>Login</title>
       </Head>
-      <h1><Link href={'/'}><a>Go back home</a></Link></h1>
+      <h1>
+        <Link href={"/"}>
+          <a>Go back home</a>
+        </Link>
+      </h1>
       <Layout>
         <section className="w-3/4 mx-auto flex flex-col gap-10">
           <div className="title">
@@ -82,13 +98,15 @@ export default function () {
               Login with your user and password
             </p>
           </div>
-          <form className="flex flex-col gap-5">
+          <form onSubmit={formik.handleSubmit} className="flex flex-col gap-5">
             <div className={styles.input_group}>
               <input
                 type="email"
                 placeholder="Email"
                 name="email"
                 className={styles.input_text}
+                onChange={formik.handleChange}
+                value={formik.values.email}
               ></input>
               <span className="icon flex items-center px-4">
                 <HiAtSymbol size={25}></HiAtSymbol>
@@ -100,6 +118,8 @@ export default function () {
                 placeholder="Password"
                 name="password"
                 className={styles.input_text}
+                onChange={formik.handleChange}
+                value={formik.values.password}
               ></input>
               <span
                 className="icon flex items-center px-4"
