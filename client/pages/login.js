@@ -60,6 +60,12 @@ export default function () {
   async function handleGoogleSignIn () {
     signIn("google", { callbackUrl: "https://js-mongo-app-126f.vercel.app/" });
   }
+
+  async function handleFacebookSignIn () {
+    signIn("facebook", {
+      callbackUrl: "https://js-mongo-app-126f.vercel.app/",
+    });
+  }
   
 
   return (
@@ -124,7 +130,11 @@ export default function () {
             </button>
           </div>
           <div>
-            <button className={styles.button_custom} type="button">
+            <button
+              onClick={handleFacebookSignIn}
+              className={styles.button_custom}
+              type="button"
+            >
               Sign in with Facebook{" "}
               <Image
                 src={imageFacebook}
