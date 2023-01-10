@@ -1,0 +1,4 @@
+.image {
+    background-image: url('../public/img/golden.jpg');
+    background-size: cover;
+}
