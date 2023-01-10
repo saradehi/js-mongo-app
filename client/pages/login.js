@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSession, signIn } from "next-auth/react";
 import Link from "next/link";
 import Layout from "./layout/layout";
 import Head from "next/head";
@@ -8,6 +7,7 @@ import Image from "next/image";
 import imageGoogle from '../public/img/google.png'
 import imageFacebook from '../public/img/facebook.png'
 import {HiAtSymbol, HiFingerPrint} from 'react-icons/hi'
+import { signIn, signOut } from "next-auth/react";
 
 export default function () {
   // const {data: session} = useSession()
@@ -55,8 +55,12 @@ export default function () {
   //     )}
   //   </>
   // );
-
   const [show, setShow] = useState(false)
+
+  async function handleGoogleSignIn () {
+    signIn("google", { callbackUrl: "https://js-mongo-app-126f.vercel.app" });
+  }
+  
 
   return (
     <Layout>
@@ -99,8 +103,8 @@ export default function () {
             </button>
           </div>
           <div>
-            <button className={styles.button_custom} type="button">
-              Sign in with Google{" "}
+            <button className={styles.button_custom} onClick={handleGoogleSignIn} type="button">
+              Sign in with Google
               <Image
                 src={imageGoogle}
                 alt="logoGoogle"

@@ -1,17 +1,17 @@
 import Head from "next/head";
-import { useState } from "react";
 import Guest from './components/Guest/Guest'
 import User from "./components/User/User";
+import { useSession } from "next-auth/react";
 
 
 export default function Home() {
-  const [session, setSession] = useState(false)
+  const { data: session} = useSession()
   return (
     <div>
       <Head><title>Home Page</title></Head>
 
       {
-        session === true ? <User /> : <Guest />
+        session ? <User session={session} /> : <Guest />
       }
 
     </div>
