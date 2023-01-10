@@ -90,7 +90,7 @@ export default function Login() {
         <div>
           <p className="text-center text-gray-400">
             Already have an account?
-            <Link href={"/signup"}>
+            <Link href={"/login"}>
               <a className="text-blue-700">Sign In</a>
             </Link>
           </p>
