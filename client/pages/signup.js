@@ -19,7 +19,7 @@ export default function Login() {
       onSubmit
     })
 
-    async function onSubmit(){
+    async function onSubmit(values){
       console.log(values)
     }
 
