@@ -105,8 +105,9 @@ export default function () {
                 placeholder="Email"
                 name="email"
                 className={styles.input_text}
-                onChange={formik.handleChange}
-                value={formik.values.email}
+                // onChange={formik.handleChange}
+                // value={formik.values.email}
+                {...formik.getFieldProps("email")}
               ></input>
               <span className="icon flex items-center px-4">
                 <HiAtSymbol size={25}></HiAtSymbol>
@@ -118,8 +119,9 @@ export default function () {
                 placeholder="Password"
                 name="password"
                 className={styles.input_text}
-                onChange={formik.handleChange}
-                value={formik.values.password}
+                // onChange={formik.handleChange}
+                // value={formik.values.password}
+                {...formik.getFieldProps("password")}
               ></input>
               <span
                 className="icon flex items-center px-4"
