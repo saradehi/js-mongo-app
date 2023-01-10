@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Laila:wght@500&family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -74,6 +80,7 @@
 }
 
 * {
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;

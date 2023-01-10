@@ -15,7 +15,7 @@ export default function () {
               <Link href={"/profile"}>
                 <button type="button">{session.user.name}'s</button>
               </Link>{" "}
-              profile. 
+              profile.
             </p>
           </div>
         ) : (
@@ -34,8 +34,15 @@ export default function () {
               <button type="submit">Log in</button>
             </div>
             <div>
-              <h1>SIGN IN</h1>
-              <button onClick={() => signIn()}>Sign in</button>
+              <h1>SIGN UP</h1>
+              <p>
+                <Link href={"/signup"}>CLICK HERE</Link>
+              </p>
+              <button>Sign in with Google</button>
+              <button>Sign in with Facebook</button>
+              <button onClick={() => signIn()}>
+                Sign in with Google or Facebook
+              </button>
             </div>
           </div>
         )}
