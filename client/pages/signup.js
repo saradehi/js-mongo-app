@@ -44,7 +44,7 @@ export default function Login() {
           <h1 className="text-gay-800 text-4xl font-bold py-4">Register</h1>
           <p className="w-3/4 mx-auto text-gray-400">Register as a new user</p>
         </div>
-        <form className="flex flex-col gap-5">
+        <form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
           <div className={styles.input_group}>
             <input
               type="text"
