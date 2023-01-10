@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+
 
 const User = ({data: session}) => {
   return (
