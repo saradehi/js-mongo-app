@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const User = ({name}) => {
 
@@ -9,7 +10,7 @@ const User = ({name}) => {
         <h2>Hi, {name}!</h2>
       </div>
       <div className="flex justify-center">
-        <button className="mt-5 px-10 py-1 rounded-sm bg-indigo-500 gb-gray-50">
+        <button onClick={() => signOut()} className="mt-5 px-10 py-1 rounded-sm bg-indigo-500 gb-gray-50">
           Sign Out
         </button>
       </div>

@@ -7,7 +7,7 @@ import Image from "next/image";
 import imageGoogle from '../public/img/google.png'
 import imageFacebook from '../public/img/facebook.png'
 import {HiAtSymbol, HiFingerPrint} from 'react-icons/hi'
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 export default function () {
   // const {data: session} = useSession()
