@@ -68,6 +68,11 @@ export default function () {
         <title>Login</title>
       </Head>
       <section className="w-3/4 mx-auto flex flex-col gap-10">
+        <div>
+          <Link href={"/"}>
+            <a>Go back Home</a>
+          </Link>
+        </div>
         <div className="title">
           <h1 className="text-gay-800 text-4xl font-bold py-4">Log in</h1>
           <p className="w-3/4 mx-auto text-gray-400">
@@ -93,7 +98,10 @@ export default function () {
               name="password"
               className={styles.input_text}
             ></input>
-            <span className="icon flex items-center px-4" onClick={() => setShow(!show)}>
+            <span
+              className="icon flex items-center px-4"
+              onClick={() => setShow(!show)}
+            >
               <HiFingerPrint size={25}></HiFingerPrint>
             </span>
           </div>
@@ -103,7 +111,11 @@ export default function () {
             </button>
           </div>
           <div>
-            <button className={styles.button_custom} onClick={handleGoogleSignIn} type="button">
+            <button
+              className={styles.button_custom}
+              onClick={handleGoogleSignIn}
+              type="button"
+            >
               Sign in with Google
               <Image
                 src={imageGoogle}

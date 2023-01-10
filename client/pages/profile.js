@@ -1,5 +1,5 @@
 import React from "react";
-import { useSession, signOut } from "next-auth/react";
+import { useSession, signOut, getSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,3 +34,14 @@ const profile = () => {
 
 export default profile
 
+export async function getServerSideProps({req}) {
+  const {session} = await getSession({req})
+
+  if(!session){
+    return {
+      redirect: {
+        destination: '/login',
+      }
+    }
+  }
+}
