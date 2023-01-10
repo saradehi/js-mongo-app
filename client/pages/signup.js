@@ -4,10 +4,24 @@ import Layout from "./layout/layout";
 import Head from "next/head";
 import styles from "../styles/form.module.css";
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
+import { useFormik } from "formik";
 
 export default function Login() {
 
     const [show, setShow] = useState({password: false, cpassword: false})
+    const formik = useFormik({
+      initialValues: {
+        username: "",
+        email: "",
+        password: "",
+        cpassword: ""
+      },
+      onSubmit
+    })
+
+    async function onSubmit(){
+      console.log(values)
+    }
 
   return (
     <Layout>
@@ -37,6 +51,7 @@ export default function Login() {
               placeholder="Username"
               name="username"
               className={styles.input_text}
+              {...formik.getFieldProps("username")}
             ></input>
             <span className="icon flex items-center px-4">
               <HiOutlineUser size={25}></HiOutlineUser>
@@ -48,6 +63,7 @@ export default function Login() {
               placeholder="Email"
               name="email"
               className={styles.input_text}
+              {...formik.getFieldProps("email")}
             ></input>
             <span className="icon flex items-center px-4">
               <HiAtSymbol size={25}></HiAtSymbol>
@@ -59,10 +75,11 @@ export default function Login() {
               placeholder="Password"
               name="password"
               className={styles.input_text}
+              {...formik.getFieldProps("password")}
             ></input>
             <span
               className="icon flex items-center px-4"
-              onClick={() => setShow({...show, password: !show.password})}
+              onClick={() => setShow({ ...show, password: !show.password })}
             >
               <HiFingerPrint size={25}></HiFingerPrint>
             </span>
@@ -73,10 +90,11 @@ export default function Login() {
               placeholder="Confirm Password"
               name="cpassword"
               className={styles.input_text}
+              {...formik.getFieldProps("cpassword")}
             ></input>
             <span
               className="icon flex items-center px-4"
-              onClick={() => setShow({...show, cpassword: !show.cpassword})}
+              onClick={() => setShow({ ...show, cpassword: !show.cpassword })}
             >
               <HiFingerPrint size={25}></HiFingerPrint>
             </span>
