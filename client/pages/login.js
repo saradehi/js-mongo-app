@@ -69,91 +69,91 @@ export default function () {
   
 
   return (
-    <Layout>
+    <div>
       <Head>
         <title>Login</title>
       </Head>
-      <section className="w-3/4 mx-auto flex flex-col gap-10">
-        <div className="title">
-          <Link href={"/"}>
-            <a>Go back Home</a>
-          </Link>
-          <h1 className="text-gay-800 text-4xl font-bold py-4">Log in</h1>
-          <p className="w-3/4 mx-auto text-gray-400">
-            Login with your user and password
-          </p>
-        </div>
-        <form className="flex flex-col gap-5">
-          <div className={styles.input_group}>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              className={styles.input_text}
-            ></input>
-            <span className="icon flex items-center px-4">
-              <HiAtSymbol size={25}></HiAtSymbol>
-            </span>
+      <h1><Link href={'/'}><a>Go back home</a></Link></h1>
+      <Layout>
+        <section className="w-3/4 mx-auto flex flex-col gap-10">
+          <div className="title">
+            <h1 className="text-gay-800 text-4xl font-bold py-4">Log in</h1>
+            <p className="w-3/4 mx-auto text-gray-400">
+              Login with your user and password
+            </p>
           </div>
-          <div className={styles.input_group}>
-            <input
-              type={`${show ? "text" : "password"}`}
-              placeholder="Password"
-              name="password"
-              className={styles.input_text}
-            ></input>
-            <span
-              className="icon flex items-center px-4"
-              onClick={() => setShow(!show)}
-            >
-              <HiFingerPrint size={25}></HiFingerPrint>
-            </span>
-          </div>
-          <div className="input-button">
-            <button className={styles.button} type="submit">
-              Log in
-            </button>
-          </div>
+          <form className="flex flex-col gap-5">
+            <div className={styles.input_group}>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                className={styles.input_text}
+              ></input>
+              <span className="icon flex items-center px-4">
+                <HiAtSymbol size={25}></HiAtSymbol>
+              </span>
+            </div>
+            <div className={styles.input_group}>
+              <input
+                type={`${show ? "text" : "password"}`}
+                placeholder="Password"
+                name="password"
+                className={styles.input_text}
+              ></input>
+              <span
+                className="icon flex items-center px-4"
+                onClick={() => setShow(!show)}
+              >
+                <HiFingerPrint size={25}></HiFingerPrint>
+              </span>
+            </div>
+            <div className="input-button">
+              <button className={styles.button} type="submit">
+                Log in
+              </button>
+            </div>
+            <div>
+              <button
+                className={styles.button_custom}
+                onClick={handleGoogleSignIn}
+                type="button"
+              >
+                Sign in with Google
+                <Image
+                  src={imageGoogle}
+                  alt="logoGoogle"
+                  width={20}
+                  height={20}
+                ></Image>
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={handleFacebookSignIn}
+                className={styles.button_custom}
+                type="button"
+              >
+                Sign in with Facebook{" "}
+                <Image
+                  src={imageFacebook}
+                  alt="logoFacebook"
+                  width={20}
+                  height={20}
+                ></Image>
+              </button>
+            </div>
+          </form>
           <div>
-            <button
-              className={styles.button_custom}
-              onClick={handleGoogleSignIn}
-              type="button"
-            >
-              Sign in with Google
-              <Image
-                src={imageGoogle}
-                alt="logoGoogle"
-                width={20}
-                height={20}
-              ></Image>
-            </button>
+            <p className="text-center text-gray-400">
+              Don't have an account?
+              <Link href={"/signup"}>
+                <a className="text-blue-700">Sign Up</a>
+              </Link>
+            </p>
           </div>
-          <div>
-            <button
-              onClick={handleFacebookSignIn}
-              className={styles.button_custom}
-              type="button"
-            >
-              Sign in with Facebook{" "}
-              <Image
-                src={imageFacebook}
-                alt="logoFacebook"
-                width={20}
-                height={20}
-              ></Image>
-            </button>
-          </div>
-        </form>
-        <div>
-          <p className="text-center text-gray-400">
-            Don't have an account?
-            <Link href={"/signup"}>
-              <a className="text-blue-700">Sign Up</a>
-            </Link>
-          </p>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </div>
   );
 }
