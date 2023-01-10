@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../../../styles/Home.module.css";
 
-function Guest() {
+const Guest = () => {
   return (
     <main className="container mx-auto text-center py-20">
       <h3 className="text-4xl font-bold">Guest Homepage</h3>
@@ -15,3 +15,5 @@ function Guest() {
     </main>
   );
 }
+
+export default Guest;
