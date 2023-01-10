@@ -58,7 +58,7 @@ export default function () {
   const [show, setShow] = useState(false)
 
   async function handleGoogleSignIn () {
-    signIn("google", { callbackUrl: "https://js-mongo-app-126f.vercel.app/api/auth/callback/google" });
+    signIn("google", { callbackUrl: "https://js-mongo-app-126f.vercel.app/" });
   }
   
 
