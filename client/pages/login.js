@@ -8,7 +8,7 @@ import imageGoogle from '../public/img/google.png'
 import imageFacebook from '../public/img/facebook.png'
 import {HiAtSymbol, HiFingerPrint} from 'react-icons/hi'
 import { signIn } from "next-auth/react";
-import {ErrorMessage, useFormik} from 'formik'
+import { useFormik} from 'formik'
 import loginValidate from "../controlers/validateLogin";
 
 export default function () {
@@ -101,7 +101,13 @@ export default function () {
             </p>
           </div>
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-5">
-            <div className={styles.input_group}>
+            <div
+              className={`${styles.input_group} ${
+                formik.errors.email && formik.touched.email
+                  ? "border-rose-600"
+                  : ""
+              }`}
+            >
               <input
                 type="email"
                 placeholder="Email"
@@ -115,8 +121,14 @@ export default function () {
                 <HiAtSymbol size={25}></HiAtSymbol>
               </span>
             </div>
-              {formik.errors.email && <span className="text-rose-500">{formik.errors.email}</span>}
-            <div className={styles.input_group}>
+            {/* {formik.errors.email && formik.touched.email && (
+              <span className="text-rose-500">{formik.errors.email}</span>
+            )} */}
+            <div
+              className={`${styles.input_group} ${
+                formik.errors.password && formik.touched.password
+              ? 'border-rose-600' : ''}`}
+            >
               <input
                 type={`${show ? "text" : "password"}`}
                 placeholder="Password"
@@ -133,7 +145,9 @@ export default function () {
                 <HiFingerPrint size={25}></HiFingerPrint>
               </span>
             </div>
-              {formik.errors.password && <span className="text-rose-500">{formik.errors.password}</span>}
+            {/* {formik.errors.password && formik.touched.password && (
+              <span className="text-rose-500">{formik.errors.password}</span>
+            )} */}
             <div className="input-button">
               <button className={styles.button} type="submit">
                 Log in
