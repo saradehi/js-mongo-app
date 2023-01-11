@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const profile = () => {
     const {data: session} = useSession()
+    console.log(session)
 
     return (
       <div>

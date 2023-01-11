@@ -8,7 +8,8 @@ import imageGoogle from '../public/img/google.png'
 import imageFacebook from '../public/img/facebook.png'
 import {HiAtSymbol, HiFingerPrint} from 'react-icons/hi'
 import { signIn } from "next-auth/react";
-import {useFormik} from 'formik'
+import {ErrorMessage, useFormik} from 'formik'
+import loginValidate from "../controlers/validateLogin";
 
 export default function () {
   // const {data: session} = useSession()
@@ -62,6 +63,7 @@ export default function () {
       email: "",
       password: ""
     },
+    validate: loginValidate,
     onSubmit
   })
 
@@ -113,6 +115,7 @@ export default function () {
                 <HiAtSymbol size={25}></HiAtSymbol>
               </span>
             </div>
+              {formik.errors.email && <span className="text-rose-500">{formik.errors.email}</span>}
             <div className={styles.input_group}>
               <input
                 type={`${show ? "text" : "password"}`}
@@ -130,6 +133,7 @@ export default function () {
                 <HiFingerPrint size={25}></HiFingerPrint>
               </span>
             </div>
+              {formik.errors.password && <span className="text-rose-500">{formik.errors.password}</span>}
             <div className="input-button">
               <button className={styles.button} type="submit">
                 Log in
