@@ -1,4 +1,5 @@
 import style from '../../styles/layout.module.css'
+import React from 'react';
 
 export default function Layout({ children }) {
   return (

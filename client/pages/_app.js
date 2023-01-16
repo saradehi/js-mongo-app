@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-
+import React from "react";
 import { wrapper } from "../src/store";
 import { Provider } from "react-redux";
 import { SessionProvider } from "next-auth/react";
