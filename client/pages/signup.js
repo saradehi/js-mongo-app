@@ -147,7 +147,7 @@ export default function Login() {
           <p className="text-center text-gray-400">
             Already have an account?
             <Link href={"/login"}>
-              <a className="text-blue-700">Sign In</a>
+              <p className="text-blue-700">Sign In</p>
             </Link>
           </p>
         </div>

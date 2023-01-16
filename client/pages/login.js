@@ -89,7 +89,7 @@ export default function () {
       </Head>
       <h1>
         <Link href={"/"}>
-          <a>Go back home</a>
+          <p>Go back home</p>
         </Link>
       </h1>
       <Layout>
@@ -188,7 +188,7 @@ export default function () {
             <p className="text-center text-gray-400">
               Don't have an account?
               <Link href={"/signup"}>
-                <a className="text-blue-700">Sign Up</a>
+                <p className="text-blue-700">Sign Up</p>
               </Link>
             </p>
           </div>
