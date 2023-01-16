@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Pets from './components/Pets/Pets'
+import Pets from '../components/Pets/Pets'
 
 
 export default function () {
