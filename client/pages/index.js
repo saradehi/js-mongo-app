@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import Guest from './components/Guest/Guest'
-import User from "./components/User/User";
+import Guest from '../components/Guest/Guest'
+import User from "../components/User/User";
 import { useSession } from "next-auth/react";
 
 
