@@ -2,8 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDogs } from "../../../src/actions/index";
-import styles from "../../../styles/Home.module.css";
+import { getAllDogs } from "../../src/actions/index";
+import styles from "../../styles/Homemodule.css";
 import DogCard from "../cards";
 
 export default function Home() {
